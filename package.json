@@ -1,8 +1,8 @@
 {
-  "name": "freed",
+  "name": "node-freed",
   "version": "1.0.0",
   "description": "NodeJS port of the FreeD Protocol",
-  "repository": "https://github.com/jachwe/freed",
+  "repository": "git+https://github.com/jachwe/freed.git",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
