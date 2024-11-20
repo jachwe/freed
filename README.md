@@ -19,6 +19,7 @@ If you need support or have ideas to improve this library, feel free to reach ou
 
 ```bash
 npm install freeD
+```
 
 ## Functions
 
@@ -49,6 +50,7 @@ class FreeD {
     this.Focus = 0;   // Lens focus position (0-4095)
   }
 }
+```
 
 
 ## FreeD Protocol
@@ -104,6 +106,7 @@ udpClient.send(encodedData, 6301, '127.0.0.1', (err) => {
   }
   udpClient.close();
 });
+```
 
 
 ### Receiving FreeD Data
@@ -128,6 +131,7 @@ udpServer.on('message', (msg) => {
 udpServer.bind(6301, () => {
   console.log('Listening for FreeD data on port 6301');
 });
+```
 
 
 ### References
