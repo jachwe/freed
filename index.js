@@ -51,36 +51,34 @@ function encode(data) {
 function setPosition(pos) {
   const position = Math.floor(pos * 64 * 256);
   const buffer = Buffer.alloc(8);
-  buffer.writeBigUInt64BE(BigInt(position));
+  buffer.writeBigInt64BE(BigInt(position));
   return buffer.slice(4, 7);
 }
 
 function setRotation(rot) {
   const rotation = Math.floor(rot * 32768 * 256);
   const buffer = Buffer.alloc(8);
-  buffer.writeBigUInt64BE(BigInt(rotation));
+  buffer.writeBigInt64BE(BigInt(rotation));
   return buffer.slice(4, 7);
 }
 
 function setEncoder(enc) {
   const buffer = Buffer.alloc(8);
-  buffer.writeBigUInt64BE(BigInt(enc));
+  buffer.writeBigInt64BE(BigInt(enc));
   return Buffer.concat([Buffer.from([0x00]), buffer.slice(6)]);
 }
 
 function getPosition(data) {
-  const value = (data[0] << 16) | (data[1] << 8) | data[2];
-  return value / (64 * 256);
+  return ((data[0] << 24) | (data[1] << 16) | (data[2] << 8)) / 64 / 256;
 }
 
 function getRotation(data) {
-  const value = (data[0] << 16) | (data[1] << 8) | data[2];
-  return value / (32768 * 256);
+  return ((data[0] << 24) | (data[1] << 16) | (data[2] << 8)) / 32768 / 256;
 }
 
 function getEncoder(data) {
   const value = Buffer.concat([Buffer.from([0x00]), data]);
-  return value.readUInt32BE();
+  return value.readInt32BE();
 }
 
 function checksum(data) {

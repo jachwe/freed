@@ -1,6 +1,6 @@
 {
   "name": "node-freed",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "NodeJS port of the FreeD Protocol",
   "repository": "git+https://github.com/jachwe/freed.git",
   "main": "index.js",

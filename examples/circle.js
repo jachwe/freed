@@ -8,9 +8,9 @@ const HOST = '127.0.0.1';
 
 const createData = ()=>{
   const trackingData = new FreeD();
-  const t = Date.now() / 5000;
-  trackingData.Pitch = (Math.sin(t) + 1) * 45;
-  trackingData.Yaw = (Math.cos(t) + 1) * 45;
+  const t = Date.now() / 1000;
+  trackingData.Pitch = (Math.sin(t)) * 45;
+  trackingData.Yaw = (Math.cos(t)) * 45;
   trackingData.Roll = 0;
   trackingData.PosX = 0;
   trackingData.PosY = 0;
